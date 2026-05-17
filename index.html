@@ -692,8 +692,7 @@
                     noProjectsMsg.classList.add('hidden');
                 }
             });
-
-            // --- Form Submission Simulation ---
+            // --- Form Submission Integration (Web3Forms API) ---
             const contactForm = document.getElementById('contact-form');
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -704,33 +703,61 @@
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 btn.disabled = true;
 
-                // Simulate API call
-                setTimeout(() => {
-                    // Custom non-alert notification
-                    const successMsg = document.createElement('div');
-                    successMsg.className = 'fixed bottom-5 right-5 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg z-50 transform transition-all translate-y-20 opacity-0 flex items-center gap-2';
-                    successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully!';
-                    document.body.appendChild(successMsg);
+                const formData = new FormData(contactForm);
+                const accessKey = formData.get('access_key');
 
-                    // Animate in
+                // Custom helper function for notifications
+                const showToast = (message, isError = false) => {
+                    const toast = document.createElement('div');
+                    toast.className = `fixed bottom-5 right-5 ${isError ? 'bg-red-500' : 'bg-green-500'} text-white px-6 py-3 rounded-xl shadow-lg z-50 transform transition-all translate-y-20 opacity-0 flex items-center gap-2`;
+                    toast.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-circle' : 'fa-check-circle'}"></i> ${message}`;
+                    document.body.appendChild(toast);
+
                     setTimeout(() => {
-                        successMsg.classList.remove('translate-y-20', 'opacity-0');
+                        toast.classList.remove('translate-y-20', 'opacity-0');
                     }, 10);
 
-                    // Animate out and remove
                     setTimeout(() => {
-                        successMsg.classList.add('translate-y-20', 'opacity-0');
-                        setTimeout(() => successMsg.remove(), 300);
-                    }, 3000);
+                        toast.classList.add('translate-y-20', 'opacity-0');
+                        setTimeout(() => toast.remove(), 300);
+                    }, 4000);
+                };
 
-                    // Reset form
-                    contactForm.reset();
+                // Fallback / Reminder if they haven't replaced the placeholder Access Key yet
+                if (accessKey === 'YOUR_ACCESS_KEY_HERE') {
+                    setTimeout(() => {
+                        showToast('Please set your Web3Forms Access Key in index.html to receive real emails!', true);
+                        contactForm.reset();
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }, 1500);
+                    return;
+                }
+
+                // Submit data to Web3Forms API
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        showToast('Message sent successfully! Check your inbox.');
+                        contactForm.reset();
+                    } else {
+                        showToast(data.message || 'Something went wrong. Please try again.', true);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error sending form:', error);
+                    showToast('Network error. Please try again later.', true);
+                })
+                .finally(() => {
                     btn.innerHTML = originalText;
                     btn.disabled = false;
-                }, 1500);
-            });
-
-            // --- Set Current Year in Footer ---
+                });
+                
+                 // --- Set Current Year in Footer ---
             document.getElementById('year').textContent = new Date().getFullYear();
         });
     </script>
