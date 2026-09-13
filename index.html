@@ -59,6 +59,28 @@
     </script>
 
     <style>
+        /* STREAMING_CHUNK:Explaining CSS classes used for FAQ... */
+
+/* Glassmorphism background for FAQ cards */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 
+  Important Tailwind Utility Classes Used in HTML:
+  1. `hidden`: Conceals the FAQ answer initially.
+  2. `transition-transform duration-300`: Rotates the chevron arrow smoothly (0 deg to 180 deg).
+  3. `aria-expanded="false"`: Accessibility standard tracking open/closed status.
+*/
+
         /* Custom Styles & Utilities */
         body {
             -webkit-font-smoothing: antialiased;
@@ -152,6 +174,13 @@
                     <a href="#skills" class="hover:text-brand-500 transition-colors font-medium">Skills</a>
                     <a href="#projects" class="hover:text-brand-500 transition-colors font-medium">Projects</a>
                     <a href="#services" class="hover:text-brand-500 transition-colors font-medium">Services</a>
+                    
+                    <!-- STREAMING_CHUNK:Adding FAQ Navbar link... -->
+                    <!-- Desktop Navbar Link -->
+                    <a href="#faq" class="hover:text-brand-500 transition-colors font-medium">FAQ</a>
+                   <!-- Mobile Navbar Link -->
+                    <a href="#faq" class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">FAQ</a>
+
                     <a href="#contact" class="hover:text-brand-500 transition-colors font-medium">Contact</a>
                     
                     <!-- Theme Toggle -->
@@ -489,7 +518,28 @@
             </div>
         </div>
     </section>
+ <!-- STREAMING_CHUNK:Adding FAQ Section HTML Structure... -->
+<section id="faq" class="relative z-10 py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-sm font-bold text-brand-600 dark:text-brand-400 tracking-widest uppercase mb-2">Got Questions?</h2>
+            <h3 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently Asked Questions</h3>
+            <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Everything you need to know about working with me, project timelines, payments, and deliverables.</p>
+        </div>
 
+        <!-- Accordion Items List -->
+        <div class="space-y-4 reveal" id="faq-accordion">
+            
+            <!-- Sample FAQ Accordion Item (Repeated 10 times with different questions/answers) -->
+            <div class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
+                <button class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none" aria-expanded="false">
+                    <span>What types of web applications and projects do you build?</span>
+                    <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
+                    I build custom full-stack web applications, SaaS products, e-commerce platforms, RESTful APIs, and AI-powered automation tools.
+                </div>
     <!-- Contact Section -->
     <section id="contact" class="relative z-10 py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -514,7 +564,7 @@
                                 </div>
                                 <div>
                                     <p class="text-sm text-gray-500 font-medium">Email</p>
-                                    <p class="font-semibold">malikizzatbaig@gmail.com</p>
+                                    <p class="font-semibold">malikizzatbaig2003@gmail.com</p>
                                 </div>
                             </div>
                             
@@ -549,7 +599,7 @@
                         <form id="contact-form" class="space-y-6">
                             <input type="hidden" name="access_key" value="8172d9d6-bbf3-4b92-bfdd-785cf182d72e">
                             <input type="hidden" name="subject" value="New Portfolio Message!">
-                            <input type="hidden" name="from_name" value="Your Portfolio Website">
+                            <input type="hidden" name="from_name" value="Your Portfolio Website 'Malik Developer'">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
                                 <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all" placeholder="John Doe">
@@ -695,6 +745,16 @@
                     noProjectsMsg.classList.add('hidden');
                 }
             });
+        /* STREAMING_CHUNK:Adding FAQ Accordion Interactivity JavaScript... */
+        document.addEventListener('DOMContentLoaded', () => {
+        // FAQ Accordion Elements Select karein
+        const faqButtons = document.querySelectorAll('.faq-btn');
+
+    faqButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
             // --- Form Submission Integration (Web3Forms API) ---
             const contactForm = document.getElementById('contact-form');
