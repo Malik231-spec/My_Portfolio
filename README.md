@@ -148,11 +148,9 @@ Users can:
 ```plaintext id="99fdxj"
 /portfolio
 │
-├── frontend/
-├── backend/
-├── public/
-├── src/
-├── assets/
+├── js/script.js
+├── css/style.css
+├── index.html
 └── README.md
 ```
 
@@ -163,27 +161,9 @@ Users can:
 ## Clone Repository
 
 ```bash
-git clone https://github.com/Malik231-spec/My_Website.git
-cd portfolio
+git clone https://github.com/malik231-spec/My_Portfolio.git
+cd My_Portfolio
 ```
-
----
-
-## Install Dependencies
-
-```bash
-npm install
-```
-
----
-
-## Start Development Server
-
-```bash
-npm run dev
-```
-
----
 
 # 🎯 Goals
 
