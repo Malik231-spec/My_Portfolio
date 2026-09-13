@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="Icon/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
     <title>Malik Portfolio</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -59,28 +61,6 @@
     </script>
 
     <style>
-        /* STREAMING_CHUNK:Explaining CSS classes used for FAQ... */
-
-/* Glassmorphism background for FAQ cards */
-.glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.dark .glass {
-    background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* 
-  Important Tailwind Utility Classes Used in HTML:
-  1. `hidden`: Conceals the FAQ answer initially.
-  2. `transition-transform duration-300`: Rotates the chevron arrow smoothly (0 deg to 180 deg).
-  3. `aria-expanded="false"`: Accessibility standard tracking open/closed status.
-*/
-
         /* Custom Styles & Utilities */
         body {
             -webkit-font-smoothing: antialiased;
@@ -117,20 +97,24 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: transparent;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 4px;
         }
+
         .dark ::-webkit-scrollbar-thumb {
             background: #475569;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
-        
+
         /* Gradient Text */
         .text-gradient {
             background-clip: text;
@@ -144,22 +128,35 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-darkbg dark:text-gray-100 transition-colors duration-300 relative overflow-x-hidden">
+
+<body
+    class="bg-gray-50 text-gray-900 dark:bg-darkbg dark:text-gray-100 transition-colors duration-300 relative overflow-x-hidden">
 
     <!-- Loading Screen -->
     <div id="loader" class="fixed inset-0 z-[100] flex items-center justify-center bg-white dark:bg-darkbg">
         <div class="relative w-24 h-24">
-            <div class="absolute inset-0 border-4 border-brand-500 border-t-transparent rounded-full animate-spin"></div>
-            <div class="absolute inset-2 border-4 border-purple-500 border-b-transparent rounded-full animate-spin direction-reverse"></div>
-            <div class="absolute inset-0 flex items-center justify-center font-bold text-xl text-brand-600 dark:text-brand-400">Dev</div>
+            <div class="absolute inset-0 border-4 border-brand-500 border-t-transparent rounded-full animate-spin">
+            </div>
+            <div
+                class="absolute inset-2 border-4 border-purple-500 border-b-transparent rounded-full animate-spin direction-reverse">
+            </div>
+            <div
+                class="absolute inset-0 flex items-center justify-center font-bold text-xl text-brand-600 dark:text-brand-400">
+                Dev</div>
         </div>
     </div>
 
     <!-- Background Blobs -->
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 dark:bg-purple-900 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob"></div>
-        <div class="absolute top-0 -right-4 w-72 h-72 bg-brand-300 dark:bg-brand-900 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 dark:bg-pink-900 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div
+            class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 dark:bg-purple-900 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob">
+        </div>
+        <div
+            class="absolute top-0 -right-4 w-72 h-72 bg-brand-300 dark:bg-brand-900 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 dark:bg-pink-900 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-4000">
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -167,24 +164,19 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
                 <a href="#" class="text-2xl font-bold tracking-tighter text-gradient">DevPortfolio.</a>
-                
+
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#about" class="hover:text-brand-500 transition-colors font-medium">About</a>
                     <a href="#skills" class="hover:text-brand-500 transition-colors font-medium">Skills</a>
                     <a href="#projects" class="hover:text-brand-500 transition-colors font-medium">Projects</a>
                     <a href="#services" class="hover:text-brand-500 transition-colors font-medium">Services</a>
-                    
-                    <!-- STREAMING_CHUNK:Adding FAQ Navbar link... -->
-                    <!-- Desktop Navbar Link -->
                     <a href="#faq" class="hover:text-brand-500 transition-colors font-medium">FAQ</a>
-                   <!-- Mobile Navbar Link -->
-                    <a href="#faq" class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">FAQ</a>
-
                     <a href="#contact" class="hover:text-brand-500 transition-colors font-medium">Contact</a>
-                    
+
                     <!-- Theme Toggle -->
-                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none">
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none">
                         <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
                         <i class="fas fa-moon block dark:hidden text-gray-700"></i>
                     </button>
@@ -192,7 +184,8 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center gap-4">
-                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none">
+                    <button id="theme-toggle-mobile"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none">
                         <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
                         <i class="fas fa-moon block dark:hidden text-gray-700"></i>
                     </button>
@@ -204,12 +197,18 @@
         </div>
 
         <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass border-t border-gray-200 dark:border-gray-700 py-4 px-4 flex flex-col space-y-4 shadow-lg">
-            <a href="#about" class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">About</a>
-            <a href="#skills" class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">Skills</a>
-            <a href="#projects" class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">Projects</a>
-            <a href="#services" class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">Services</a>
-            <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">Contact</a>
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full glass border-t border-gray-200 dark:border-gray-700 py-4 px-4 flex flex-col space-y-4 shadow-lg">
+            <a href="#about"
+                class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">About</a>
+            <a href="#skills"
+                class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">Skills</a>
+            <a href="#projects"
+                class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">Projects</a>
+            <a href="#services"
+                class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">Services</a>
+            <a href="#contact"
+                class="block px-3 py-2 rounded-md hover:bg-brand-50 dark:hover:bg-gray-800 transition-colors">Contact</a>
         </div>
     </nav>
 
@@ -217,10 +216,11 @@
     <section id="about" class="relative z-10 pt-32 pb-20 lg:pt-48 lg:pb-32 min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="flex flex-col-reverse lg:flex-row items-center gap-12">
-                
+
                 <!-- Text Content -->
                 <div class="lg:w-1/2 text-center lg:text-left reveal">
-                    <p class="text-brand-600 dark:text-brand-400 font-semibold tracking-wide uppercase mb-2">Hello, World! I am</p>
+                    <p class="text-brand-600 dark:text-brand-400 font-semibold tracking-wide uppercase mb-2">Hello,
+                        World! I am</p>
                     <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
                         Malik <span class="text-gradient">Developer</span>
                     </h1>
@@ -228,13 +228,17 @@
                         Full-Stack Engineer & AI Enthusiast
                     </h2>
                     <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        I build robust, scalable web applications with a focus on exceptional user experiences. Passionate about integrating AI to solve complex problems and crafting clean, elegant code architectures.
+                        I build robust, scalable web applications with a focus on exceptional user experiences.
+                        Passionate about integrating AI to solve complex problems and crafting clean, elegant code
+                        architectures.
                     </p>
                     <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                        <a href="#projects" class="px-8 py-3 rounded-full bg-gradient-to-r from-brand-600 to-purple-600 text-white font-medium hover:shadow-lg hover:shadow-brand-500/30 transition-all duration-300 hover:-translate-y-1">
+                        <a href="#projects"
+                            class="px-8 py-3 rounded-full bg-gradient-to-r from-brand-600 to-purple-600 text-white font-medium hover:shadow-lg hover:shadow-brand-500/30 transition-all duration-300 hover:-translate-y-1">
                             View My Work
                         </a>
-                        <a href="#contact" class="px-8 py-3 rounded-full glass font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 hover:-translate-y-1">
+                        <a href="#contact"
+                            class="px-8 py-3 rounded-full glass font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 hover:-translate-y-1">
                             Contact Me
                         </a>
                     </div>
@@ -244,21 +248,28 @@
                 <div class="lg:w-1/2 flex justify-center reveal">
                     <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
                         <!-- Decorative elements -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-500 to-purple-500 rounded-full blur-2xl opacity-50 dark:opacity-30 animate-pulse"></div>
-                        <div class="absolute -inset-1 bg-gradient-to-tr from-brand-500 to-purple-500 rounded-full z-0 opacity-70"></div>
-                        
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-brand-500 to-purple-500 rounded-full blur-2xl opacity-50 dark:opacity-30 animate-pulse">
+                        </div>
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-tr from-brand-500 to-purple-500 rounded-full z-0 opacity-70">
+                        </div>
+
                         <!-- Image Container -->
-                        <div class="relative z-10 w-full h-full rounded-full border-4 border-white dark:border-gray-800 overflow-hidden shadow-2xl bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                        <div
+                            class="relative z-10 w-full h-full rounded-full border-4 border-white dark:border-gray-800 overflow-hidden shadow-2xl bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                             <!-- Placeholder Image (Using simple SVG icon as fallback if image fails) -->
-                            <img src="Image/Tie_court.png" alt="Profile Image" class="w-full h-full object-cover" >
+                            <img src="Image/Tie_court.png" alt="Profile Image" class="w-full h-full object-cover">
                         </div>
 
                         <!-- Floating Badges -->
-                        <div class="absolute -bottom-4 -left-4 glass px-4 py-2 rounded-xl shadow-lg z-20 flex items-center gap-2 transform hover:scale-110 transition-transform cursor-default">
+                        <div
+                            class="absolute -bottom-4 -left-4 glass px-4 py-2 rounded-xl shadow-lg z-20 flex items-center gap-2 transform hover:scale-110 transition-transform cursor-default">
                             <i class="fab fa-react text-blue-500 text-xl"></i>
                             <span class="font-bold text-sm">React</span>
                         </div>
-                        <div class="absolute -top-4 -right-4 glass px-4 py-2 rounded-xl shadow-lg z-20 flex items-center gap-2 transform hover:scale-110 transition-transform cursor-default">
+                        <div
+                            class="absolute -top-4 -right-4 glass px-4 py-2 rounded-xl shadow-lg z-20 flex items-center gap-2 transform hover:scale-110 transition-transform cursor-default">
                             <i class="fab fa-python text-yellow-500 text-xl"></i>
                             <span class="font-bold text-sm">Python</span>
                         </div>
@@ -273,36 +284,42 @@
     <section id="skills" class="relative z-10 py-20 bg-white/50 dark:bg-darkcard/50 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-sm font-bold text-brand-600 dark:text-brand-400 tracking-widest uppercase mb-2">My Arsenal</h2>
+                <h2 class="text-sm font-bold text-brand-600 dark:text-brand-400 tracking-widest uppercase mb-2">My
+                    Arsenal</h2>
                 <h3 class="text-3xl md:text-4xl font-extrabold">Technical Skills</h3>
                 <div class="w-20 h-1 bg-brand-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
+
                 <!-- Frontend -->
                 <div class="glass p-8 rounded-2xl reveal hover:-translate-y-2 transition-transform duration-300">
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-500 dark:text-blue-400 text-2xl">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-500 dark:text-blue-400 text-2xl">
                             <i class="fas fa-desktop"></i>
                         </div>
                         <h4 class="text-xl font-bold">Frontend</h4>
                     </div>
                     <div class="space-y-4">
                         <div>
-                            <div class="flex justify-between mb-1 text-sm font-medium"><span>HTML/CSS/Tailwind</span><span>95%</span></div>
+                            <div class="flex justify-between mb-1 text-sm font-medium">
+                                <span>HTML/CSS/Tailwind</span><span>95%</span>
+                            </div>
                             <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                                 <div class="bg-blue-500 h-2 rounded-full" style="width: 95%"></div>
                             </div>
                         </div>
                         <div>
-                            <div class="flex justify-between mb-1 text-sm font-medium"><span>JavaScript (ES6+)</span><span>90%</span></div>
+                            <div class="flex justify-between mb-1 text-sm font-medium"><span>JavaScript
+                                    (ES6+)</span><span>90%</span></div>
                             <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                                 <div class="bg-yellow-400 h-2 rounded-full" style="width: 90%"></div>
                             </div>
                         </div>
                         <div>
-                            <div class="flex justify-between mb-1 text-sm font-medium"><span>React / Next.js</span><span>85%</span></div>
+                            <div class="flex justify-between mb-1 text-sm font-medium"><span>React /
+                                    Next.js</span><span>85%</span></div>
                             <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                                 <div class="bg-cyan-500 h-2 rounded-full" style="width: 85%"></div>
                             </div>
@@ -311,28 +328,33 @@
                 </div>
 
                 <!-- Backend -->
-                <div class="glass p-8 rounded-2xl reveal hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 100ms;">
+                <div class="glass p-8 rounded-2xl reveal hover:-translate-y-2 transition-transform duration-300"
+                    style="transition-delay: 100ms;">
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-lg bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-500 dark:text-green-400 text-2xl">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-500 dark:text-green-400 text-2xl">
                             <i class="fas fa-server"></i>
                         </div>
                         <h4 class="text-xl font-bold">Backend</h4>
                     </div>
                     <div class="space-y-4">
                         <div>
-                            <div class="flex justify-between mb-1 text-sm font-medium"><span>Node.js / Express</span><span>88%</span></div>
+                            <div class="flex justify-between mb-1 text-sm font-medium"><span>Node.js /
+                                    Express</span><span>88%</span></div>
                             <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                                 <div class="bg-green-500 h-2 rounded-full" style="width: 88%"></div>
                             </div>
                         </div>
                         <div>
-                            <div class="flex justify-between mb-1 text-sm font-medium"><span>Python / Django</span><span>82%</span></div>
+                            <div class="flex justify-between mb-1 text-sm font-medium"><span>Python /
+                                    Django</span><span>82%</span></div>
                             <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                                 <div class="bg-blue-600 h-2 rounded-full" style="width: 82%"></div>
                             </div>
                         </div>
                         <div>
-                            <div class="flex justify-between mb-1 text-sm font-medium"><span>PostgreSQL / MongoDB</span><span>85%</span></div>
+                            <div class="flex justify-between mb-1 text-sm font-medium"><span>PostgreSQL /
+                                    MongoDB</span><span>85%</span></div>
                             <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                                 <div class="bg-emerald-500 h-2 rounded-full" style="width: 85%"></div>
                             </div>
@@ -341,22 +363,33 @@
                 </div>
 
                 <!-- AI / Tools -->
-                <div class="glass p-8 rounded-2xl reveal hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 200ms;">
+                <div class="glass p-8 rounded-2xl reveal hover:-translate-y-2 transition-transform duration-300"
+                    style="transition-delay: 200ms;">
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-lg bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center text-purple-500 dark:text-purple-400 text-2xl">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center text-purple-500 dark:text-purple-400 text-2xl">
                             <i class="fas fa-brain"></i>
                         </div>
                         <h4 class="text-xl font-bold">AI & Tools</h4>
                     </div>
-                    
+
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">TensorFlow</span>
-                        <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">OpenAI API</span>
-                        <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">Git/GitHub</span>
-                        <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">Docker</span>
-                        <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">AWS</span>
-                        <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">REST APIs</span>
-                        <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">GraphQL</span>
+                        <span
+                            class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">TensorFlow</span>
+                        <span
+                            class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">OpenAI
+                            API</span>
+                        <span
+                            class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">Git/GitHub</span>
+                        <span
+                            class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">Docker</span>
+                        <span
+                            class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">AWS</span>
+                        <span
+                            class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">REST
+                            APIs</span>
+                        <span
+                            class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium hover:bg-brand-500 hover:text-white transition-colors cursor-default">GraphQL</span>
                     </div>
                 </div>
 
@@ -368,82 +401,121 @@
     <section id="projects" class="relative z-10 py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal">
-                <h2 class="text-sm font-bold text-brand-600 dark:text-brand-400 tracking-widest uppercase mb-2">Portfolio</h2>
+                <h2 class="text-sm font-bold text-brand-600 dark:text-brand-400 tracking-widest uppercase mb-2">
+                    Portfolio</h2>
                 <h3 class="text-3xl md:text-4xl font-extrabold mb-6">Featured Projects</h3>
-                
+
                 <!-- Search/Filter -->
                 <div class="max-w-md mx-auto relative">
-                    <input type="text" id="project-search" placeholder="Search by name or tech (e.g., React, AI)" 
-                           class="w-full pl-10 pr-4 py-3 rounded-full border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all text-sm">
+                    <input type="text" id="project-search" placeholder="Search by name or tech (e.g., React, AI)"
+                        class="w-full pl-10 pr-4 py-3 rounded-full border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all text-sm">
                     <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
                 </div>
             </div>
 
             <!-- Project Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
-                
+
                 <!-- Project Card 1 -->
-                <div class="project-card reveal glass rounded-2xl overflow-hidden flex flex-col group" data-tags="react nextjs tailwind api ecommerce">
+                <div class="project-card reveal glass rounded-2xl overflow-hidden flex flex-col group"
+                    data-tags="react nextjs tailwind api ecommerce">
                     <div class="relative overflow-hidden h-48">
-                        <img src="Image/Music_Player.png" alt="Desktop Music Player" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                            <a href="https://malik231-spec.github.io/Music_Player/" class="p-3 bg-brand-500 text-white rounded-full hover:bg-brand-600 transition-colors" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="https://github.com/Malik231-spec/Music_Player" class="p-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition-colors" title="GitHub"><i class="fab fa-github"></i></a>
+                        <img src="Image/Music_Player.png" alt="Desktop Music Player"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://malik231-spec.github.io/Music_Player/"
+                                class="p-3 bg-brand-500 text-white rounded-full hover:bg-brand-600 transition-colors"
+                                title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Malik231-spec/Music_Player"
+                                class="p-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition-colors"
+                                title="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <h4 class="text-xl font-bold mb-2 project-title">Malik Music Player</h4>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">A sleek and modern music player built with React and Next.js, featuring a clean UI and seamless playback experience.</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">A sleek and modern music
+                            player built with React and Next.js, featuring a clean UI and seamless playback experience.
+                        </p>
                         <div class="flex flex-wrap gap-2 mt-auto">
-                            <span class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Next.js</span>
-                            <span class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Tailwind</span>
-                            <span class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Stripe API</span>
+                            <span
+                                class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Next.js</span>
+                            <span
+                                class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Tailwind</span>
+                            <span
+                                class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Stripe
+                                API</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Card 2 -->
-                <div class="project-card reveal glass rounded-2xl overflow-hidden flex flex-col group" data-tags="python django ai machinelearning openai">
+                <div class="project-card reveal glass rounded-2xl overflow-hidden flex flex-col group"
+                    data-tags="python django ai machinelearning openai">
                     <div class="relative overflow-hidden h-48">
-                        <img src="Image/Python_tests.png" alt="Online Python Tests" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                            <a href="https://malik231-spec.github.io/Python_Tests/" class="p-3 bg-brand-500 text-white rounded-full hover:bg-brand-600 transition-colors" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="https://github.com/Malik231-spec/Python_Tests" class="p-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition-colors" title="GitHub"><i class="fab fa-github"></i></a>
+                        <img src="Image/Python_tests.png" alt="Online Python Tests"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://malik231-spec.github.io/Python_Tests/"
+                                class="p-3 bg-brand-500 text-white rounded-full hover:bg-brand-600 transition-colors"
+                                title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Malik231-spec/Python_Tests"
+                                class="p-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition-colors"
+                                title="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <h4 class="text-xl font-bold mb-2 project-title">Python Testing Hub</h4>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">An Online website that allows users to take Python programming tests and track their progress.</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">An Online website that allows
+                            users to take Python programming tests and track their progress.</p>
                         <div class="flex flex-wrap gap-2 mt-auto">
-                            <span class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Python</span>
-                            <span class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Django</span>
-                            <span class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">OpenAI</span>
+                            <span
+                                class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Python</span>
+                            <span
+                                class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Django</span>
+                            <span
+                                class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">OpenAI</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Card 3 -->
-                <div class="project-card reveal glass rounded-2xl overflow-hidden flex flex-col group" data-tags="javascript html css dashboard chartjs">
+                <div class="project-card reveal glass rounded-2xl overflow-hidden flex flex-col group"
+                    data-tags="javascript html css dashboard chartjs">
                     <div class="relative overflow-hidden h-48">
-                        <img src="Image/Holly_Quran.png" alt="Holly Quran Website" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                            <a href="https://malik231-spec.github.io/Holly_Quran/" class="p-3 bg-brand-500 text-white rounded-full hover:bg-brand-600 transition-colors" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="https://github.com/Malik231-spec/Holly_Quran" class="p-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition-colors" title="GitHub"><i class="fab fa-github"></i></a>
+                        <img src="Image/Holly_Quran.png" alt="Holly Quran Website"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://malik231-spec.github.io/Holly_Quran/"
+                                class="p-3 bg-brand-500 text-white rounded-full hover:bg-brand-600 transition-colors"
+                                title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Malik231-spec/Holly_Quran"
+                                class="p-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition-colors"
+                                title="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <h4 class="text-xl font-bold mb-2 project-title">Holly Quran Website</h4>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">A beautiful and informative website for the Holly Quran, providing easy access to verses and translations.</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">A beautiful and informative
+                            website for the Holly Quran, providing easy access to verses and translations.</p>
                         <div class="flex flex-wrap gap-2 mt-auto">
-                            <span class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Vanilla JS</span>
-                            <span class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">React.js</span>
-                            <span class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Tailwind CSS</span>
+                            <span
+                                class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Vanilla
+                                JS</span>
+                            <span
+                                class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">React.js</span>
+                            <span
+                                class="text-xs font-semibold px-2 py-1 bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 rounded">Tailwind
+                                CSS</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Empty state for search -->
-                <div id="no-projects-msg" class="hidden col-span-full text-center py-10 text-gray-500 dark:text-gray-400">
+                <div id="no-projects-msg"
+                    class="hidden col-span-full text-center py-10 text-gray-500 dark:text-gray-400">
                     No projects found matching your search.
                 </div>
             </div>
@@ -454,112 +526,306 @@
     <section id="services" class="relative z-10 py-20 bg-white/50 dark:bg-darkcard/50 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-sm font-bold text-brand-600 dark:text-brand-400 tracking-widest uppercase mb-2">Freelance Services</h2>
+                <h2 class="text-sm font-bold text-brand-600 dark:text-brand-400 tracking-widest uppercase mb-2">
+                    Freelance Services</h2>
                 <h3 class="text-3xl md:text-4xl font-extrabold mb-4">Packages & Pricing</h3>
-                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Choose the right solution for your business needs. Quality code and timely delivery guaranteed.</p>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Choose the right solution for your
+                    business needs. Quality code and timely delivery guaranteed.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                
+
                 <!-- Basic Card -->
-                <div class="glass p-8 rounded-3xl reveal hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                <div
+                    class="glass p-8 rounded-3xl reveal hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700">
                     <h4 class="text-xl font-bold mb-2">Basic Website</h4>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Perfect for personal brands or small local businesses.</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Perfect for personal brands or small local
+                        businesses.</p>
                     <div class="mb-6">
                         <span class="text-4xl font-extrabold">$499</span>
                         <span class="text-gray-500">/starting</span>
                     </div>
                     <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Up to 5 Pages</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Responsive Design</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Contact Form</li>
-                        <li class="flex items-center gap-3 text-gray-400"><i class="fas fa-times"></i> CMS Integration</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Up to 5 Pages
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Responsive
+                            Design</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Contact Form
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400"><i class="fas fa-times"></i> CMS Integration
+                        </li>
                     </ul>
-                    <a href="#contact" class="block w-full py-3 px-4 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-center font-semibold rounded-xl transition-colors">Select Basic</a>
+                    <a href="#contact"
+                        class="block w-full py-3 px-4 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-center font-semibold rounded-xl transition-colors">Select
+                        Basic</a>
                 </div>
 
                 <!-- Advanced Card (Highlighted) -->
-                <div class="glass p-8 rounded-3xl reveal relative transform md:-translate-y-4 shadow-xl border-2 border-brand-500 dark:border-brand-500 bg-white dark:bg-gray-900">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-brand-500 to-purple-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                <div
+                    class="glass p-8 rounded-3xl reveal relative transform md:-translate-y-4 shadow-xl border-2 border-brand-500 dark:border-brand-500 bg-white dark:bg-gray-900">
+                    <div
+                        class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-brand-500 to-purple-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
                         Most Popular
                     </div>
                     <h4 class="text-xl font-bold mb-2">Advanced Web App</h4>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Custom web applications with database functionality.</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Custom web applications with database
+                        functionality.</p>
                     <div class="mb-6">
                         <span class="text-4xl font-extrabold">$1,499</span>
                         <span class="text-gray-500">/starting</span>
                     </div>
                     <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Custom UI/UX Design</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> User Authentication</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Database Integration</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Admin Dashboard</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Custom UI/UX
+                            Design</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> User
+                            Authentication</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Database
+                            Integration</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Admin Dashboard
+                        </li>
                     </ul>
-                    <a href="#contact" class="block w-full py-3 px-4 bg-gradient-to-r from-brand-500 to-purple-600 text-white text-center font-semibold rounded-xl hover:shadow-lg transition-shadow">Select Advanced</a>
+                    <a href="#contact"
+                        class="block w-full py-3 px-4 bg-gradient-to-r from-brand-500 to-purple-600 text-white text-center font-semibold rounded-xl hover:shadow-lg transition-shadow">Select
+                        Advanced</a>
                 </div>
 
                 <!-- AI Card -->
-                <div class="glass p-8 rounded-3xl reveal hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                <div
+                    class="glass p-8 rounded-3xl reveal hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700">
                     <h4 class="text-xl font-bold mb-2">AI Integration</h4>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Automate processes and add intelligence to your app.</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Automate processes and add intelligence to
+                        your app.</p>
                     <div class="mb-6">
                         <span class="text-4xl font-extrabold">$2,499</span>
                         <span class="text-gray-500">/starting</span>
                     </div>
                     <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> LLM/OpenAI Integration</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Custom Chatbots</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Data Automation pipelines</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Deployment Setup</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> LLM/OpenAI
+                            Integration</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Custom Chatbots
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Data Automation
+                            pipelines</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Deployment Setup
+                        </li>
                     </ul>
-                    <a href="#contact" class="block w-full py-3 px-4 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-center font-semibold rounded-xl transition-colors">Select AI</a>
+                    <a href="#contact"
+                        class="block w-full py-3 px-4 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-center font-semibold rounded-xl transition-colors">Select
+                        AI</a>
                 </div>
 
             </div>
         </div>
     </section>
- <!-- STREAMING_CHUNK:Adding FAQ Section HTML Structure... -->
-<section id="faq" class="relative z-10 py-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
-        <div class="text-center mb-16 reveal">
-            <h2 class="text-sm font-bold text-brand-600 dark:text-brand-400 tracking-widest uppercase mb-2">Got Questions?</h2>
-            <h3 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently Asked Questions</h3>
-            <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Everything you need to know about working with me, project timelines, payments, and deliverables.</p>
-        </div>
+    <!-- FAQ Section -->
+    <section id="faq" class="relative z-10 py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-bold text-brand-600 dark:text-brand-400 tracking-widest uppercase mb-2">Got
+                    Questions?</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently Asked Questions</h3>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Everything you need to know about working
+                    with me, project timelines, payments, and deliverables.</p>
+            </div>
 
-        <!-- Accordion Items List -->
-        <div class="space-y-4 reveal" id="faq-accordion">
-            
-            <!-- Sample FAQ Accordion Item (Repeated 10 times with different questions/answers) -->
-            <div class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
-                <button class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none" aria-expanded="false">
-                    <span>What types of web applications and projects do you build?</span>
-                    <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
-                </button>
-                <div class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
-                    I build custom full-stack web applications, SaaS products, e-commerce platforms, RESTful APIs, and AI-powered automation tools.
+            <div class="space-y-4 reveal" id="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div
+                    class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none"
+                        aria-expanded="false">
+                        <span>What types of web applications and projects do you build?</span>
+                        <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
+                        I build custom full-stack web applications, SaaS products, e-commerce platforms, RESTful APIs,
+                        and AI-powered automation tools. Whether you need a sleek landing page or a complex
+                        database-driven platform, I tailor solutions to meet your business goals.
+                    </div>
                 </div>
+
+                <!-- FAQ Item 2 -->
+                <div
+                    class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none"
+                        aria-expanded="false">
+                        <span>How long does it usually take to complete a project?</span>
+                        <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
+                        Project timelines depend on complexity. Simple promotional websites take 1 to 2 weeks, standard
+                        custom web applications take 3 to 5 weeks, and complex AI integrations or large-scale SaaS
+                        systems can take 6 to 10 weeks. I provide a realistic timeline before starting.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div
+                    class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none"
+                        aria-expanded="false">
+                        <span>What is your payment structure and pricing model?</span>
+                        <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
+                        I typically work on a milestone-based fixed price model (50% deposit upfront and 50% upon
+                        project completion and deployment). For ongoing advisory or retainer work, hourly or monthly
+                        fixed rates are also available.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div
+                    class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none"
+                        aria-expanded="false">
+                        <span>Can you work on existing project codebases or legacy systems?</span>
+                        <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
+                        Yes! I can review, refactor, optimize, and add new features to existing codebases. Before
+                        jumping in, I conduct a brief code audit to ensure the existing architecture is sustainable and
+                        secure.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div
+                    class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none"
+                        aria-expanded="false">
+                        <span>Do you provide post-launch support and ongoing maintenance?</span>
+                        <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
+                        Every project includes 30 days of free post-launch support for bug fixes and adjustments. After
+                        that, I offer flexible monthly maintenance packages to handle security updates, performance
+                        monitoring, and new features.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div
+                    class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none"
+                        aria-expanded="false">
+                        <span>Will my website or web application be fully responsive and SEO-friendly?</span>
+                        <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
+                        Absolutely. All web projects are built mobile-first and tested thoroughly across mobile phones,
+                        tablets, and desktop displays. I also implement clean HTML semantics, fast loading performance,
+                        and essential SEO metadata tags.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div
+                    class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none"
+                        aria-expanded="false">
+                        <span>Who owns the final code and intellectual property?</span>
+                        <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
+                        Once the final payment is cleared, 100% of the source code, design assets, and intellectual
+                        property rights belong to you. I will transfer all repository access and host credentials to
+                        your control.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div
+                    class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none"
+                        aria-expanded="false">
+                        <span>How will we communicate and track progress during the project?</span>
+                        <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
+                        I value transparency. We will communicate via Email, Slack, or WhatsApp, with weekly progress
+                        updates and staging link demos. I also share Trello/Jira boards so you can track milestones in
+                        real time.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 9 -->
+                <div
+                    class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none"
+                        aria-expanded="false">
+                        <span>Can you integrate third-party APIs or AI models into my project?</span>
+                        <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
+                        Yes! I specialize in connecting applications with third-party APIs including OpenAI (ChatGPT,
+                        DALL-E), Stripe, PayPal, Google Cloud, AWS services, SendGrid, and custom REST/GraphQL services.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 10 -->
+                <div
+                    class="glass rounded-2xl border border-gray-200 dark:border-gray-700/60 overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-btn w-full p-6 text-left font-semibold text-lg flex justify-between items-center gap-4 focus:outline-none"
+                        aria-expanded="false">
+                        <span>What information or assets do I need to provide before we start?</span>
+                        <i class="fas fa-chevron-down text-brand-500 transition-transform duration-300"></i>
+                    </button>
+                    <div
+                        class="faq-answer hidden px-6 pb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/80 pt-4">
+                        To get started, you'll need a project overview, branding assets (logo, preferred color scheme),
+                        text/content copy if available, and any reference websites or inspiration you like. If you don't
+                        have everything yet, I can guide you through it!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="relative z-10 py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass rounded-3xl p-8 lg:p-12 shadow-2xl reveal border border-gray-200 dark:border-gray-700 overflow-hidden relative">
-                
+            <div
+                class="glass rounded-3xl p-8 lg:p-12 shadow-2xl reveal border border-gray-200 dark:border-gray-700 overflow-hidden relative">
+
                 <!-- Background decorative elements for contact card -->
-                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 pointer-events-none"></div>
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 pointer-events-none">
+                </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
-                    
+
                     <!-- Contact Info -->
                     <div>
                         <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Let's work together!</h2>
                         <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                            Have a project in mind or just want to say hi? Feel free to reach out. I'm currently available for freelance opportunities.
+                            Have a project in mind or just want to say hi? Feel free to reach out. I'm
+                            currently available for freelance opportunities.
                         </p>
-                        
+
                         <div class="space-y-6">
                             <div class="flex items-center gap-4 group cursor-pointer">
-                                <div class="w-12 h-12 rounded-full bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center text-brand-600 dark:text-brand-400 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center text-brand-600 dark:text-brand-400 group-hover:bg-brand-500 group-hover:text-white transition-colors">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
@@ -567,9 +833,10 @@
                                     <p class="font-semibold">malikizzatbaig2003@gmail.com</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center text-brand-600 dark:text-brand-400">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center text-brand-600 dark:text-brand-400">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
@@ -580,17 +847,25 @@
                         </div>
 
                         <div class="mt-10">
-                            <p class="text-sm font-semibold mb-4 text-gray-500 uppercase tracking-wider">Connect with me</p>
+                            <p class="text-sm font-semibold mb-4 text-gray-500 uppercase tracking-wider">
+                                Connect with me</p>
                             <div class="flex gap-4">
-                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-all transform hover:-translate-y-1"><i class="fab fa-github"></i></a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-all transform hover:-translate-y-1"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-[#1DA1F2] hover:text-white transition-all transform hover:-translate-y-1"><i class="fab fa-twitter"></i></a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition-all transform hover:-translate-y-1"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-all transform hover:-translate-y-1"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-[#1DA1F2] hover:text-white transition-all transform hover:-translate-y-1"><i
+                                        class="fab fa-twitter"></i></a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Contact Form -->
-                    <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-inner border border-gray-100 dark:border-gray-800">
+                    <div
+                        class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-inner border border-gray-100 dark:border-gray-800">
                         <!-- 
                           SETUP INSTRUCTIONS:
                           1. Visit https://web3forms.com and enter your email to get a free "Access Key".
@@ -601,20 +876,31 @@
                             <input type="hidden" name="subject" value="New Portfolio Message!">
                             <input type="hidden" name="from_name" value="Your Portfolio Website 'Malik Developer'">
                             <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all" placeholder="John Doe">
+                                <label for="name"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all"
+                                    placeholder="John Doe">
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all" placeholder="john@example.com">
+                                <label for="email"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all"
+                                    placeholder="john@example.com">
                             </div>
                             <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
-                                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all resize-none" placeholder="Tell me about your project..."></textarea>
+                                <label for="message"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all resize-none"
+                                    placeholder="Tell me about your project..."></textarea>
                             </div>
-                            <button type="submit" class="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-brand-600 to-purple-600 text-white font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-all hover:-translate-y-0.5 group">
+                            <button type="submit"
+                                class="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-brand-600 to-purple-600 text-white font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-all hover:-translate-y-0.5 group">
                                 <span>Send Message</span>
-                                <i class="fas fa-paper-plane transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                                <i
+                                    class="fas fa-paper-plane transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
                             </button>
                         </form>
                     </div>
@@ -625,10 +911,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="relative z-10 border-t border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-darkbg/30 backdrop-blur-md py-8 mt-10">
+    <footer
+        class="relative z-10 border-t border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-darkbg/30 backdrop-blur-md py-8 mt-10">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p class="text-gray-500 dark:text-gray-400 text-sm">
-                &copy; <span id="year"></span> DevPortfolio. Designed & Built with <i class="fas fa-heart text-red-500 mx-1"></i>. All rights reserved.
+                &copy; <span id="year"></span> DevPortfolio. Designed & Built with <i
+                    class="fas fa-heart text-red-500 mx-1"></i>. All rights reserved.
             </p>
         </div>
     </footer>
@@ -636,7 +924,7 @@
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
+
             // --- Loading Screen Logic ---
             const loader = document.getElementById('loader');
             window.addEventListener('load', () => {
@@ -650,7 +938,7 @@
             const themeToggleBtn = document.getElementById('theme-toggle');
             const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
             const htmlElement = document.documentElement;
-            
+
             // Check for saved theme or system preference
             if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 htmlElement.classList.add('dark');
@@ -699,7 +987,7 @@
 
             // --- Scroll Reveal Animation ---
             const revealElements = document.querySelectorAll('.reveal');
-            
+
             const revealOptions = {
                 threshold: 0.15,
                 rootMargin: "0px 0px -50px 0px"
@@ -730,7 +1018,7 @@
                 projectCards.forEach(card => {
                     const title = card.querySelector('.project-title').textContent.toLowerCase();
                     const tags = card.getAttribute('data-tags').toLowerCase();
-                    
+
                     if (title.includes(searchTerm) || tags.includes(searchTerm)) {
                         card.style.display = 'flex';
                         visibleCount++;
@@ -745,47 +1033,6 @@
                     noProjectsMsg.classList.add('hidden');
                 }
             });
-        /* STREAMING_CHUNK:Adding FAQ Accordion Interactivity JavaScript... */
-document.addEventListener('DOMContentLoaded', () => {
-    // FAQ Accordion Elements Select karein
-    const faqButtons = document.querySelectorAll('.faq-btn');
-
-    faqButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const answer = button.nextElementSibling;
-            const icon = button.querySelector('i');
-            const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-            // Baaqi sabhi open FAQs ko close karne ka logic (Auto-Collapse)
-            faqButtons.forEach(otherBtn => {
-                if (otherBtn !== button) {
-                    otherBtn.setAttribute('aria-expanded', 'false');
-                    otherBtn.nextElementSibling.classList.add('hidden');
-                    const otherIcon = otherBtn.querySelector('i');
-                    if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
-                }
-            });
-
-            // Selected FAQ ko open/close toggle karein
-            if (isExpanded) {
-                button.setAttribute('aria-expanded', 'false');
-                answer.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                button.setAttribute('aria-expanded', 'true');
-                answer.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            }
-        });
-    });
-});
-
-
-    faqButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const answer = button.nextElementSibling;
-            const icon = button.querySelector('i');
-            const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
             // --- Form Submission Integration (Web3Forms API) ---
             const contactForm = document.getElementById('contact-form');
@@ -793,7 +1040,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 const btn = contactForm.querySelector('button[type="submit"]');
                 const originalText = btn.innerHTML;
-                
+
                 // Change button state
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 btn.disabled = true;
@@ -834,28 +1081,65 @@ document.addEventListener('DOMContentLoaded', () => {
                     method: 'POST',
                     body: formData
                 })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        showToast('Message sent successfully! Check your inbox.');
-                        contactForm.reset();
-                    } else {
-                        showToast(data.message || 'Something went wrong. Please try again.', true);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error sending form:', error);
-                    showToast('Network error. Please try again later.', true);
-                })
-                .finally(() => {
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                });
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            showToast('Message sent successfully! Check your inbox.');
+                            contactForm.reset();
+                        } else {
+                            showToast(data.message || 'Something went wrong. Please try again.', true);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error sending form:', error);
+                        showToast('Network error. Please try again later.', true);
+                    })
+                    .finally(() => {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    });
             });
 
             // --- Set Current Year in Footer ---
             document.getElementById('year').textContent = new Date().getFullYear();
+
+            // --- FAQ Accordion Logic ---
+            const faqButtons = document.querySelectorAll('.faq-btn');
+
+            faqButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const answer = button.nextElementSibling;
+                    const icon = button.querySelector('i');
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                    // Close other open FAQs for smooth accordion effect
+                    faqButtons.forEach(otherBtn => {
+                        if (otherBtn !== button) {
+                            otherBtn.setAttribute('aria-expanded', 'false');
+                            otherBtn.nextElementSibling.classList.add('hidden');
+                            const otherIcon = otherBtn.querySelector('i');
+                            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Toggle current FAQ item
+                    if (isExpanded) {
+                        button.setAttribute('aria-expanded', 'false');
+                        answer.classList.add('hidden');
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        button.setAttribute('aria-expanded', 'true');
+                        answer.classList.remove('hidden');
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
         });
+
+
+
+
     </script>
 </body>
+
 </html>
