@@ -161,7 +161,11 @@ Users can:
 ## Clone Repository
 
 ```bash
-git clone https://github.com/malik231-spec/My_Portfolio.git
+          
+git clone: https://github.com/Malik231-spec/My_Portfolio.git 
+
+```
+```bash
 cd My_Portfolio
 ```
 
